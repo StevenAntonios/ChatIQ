@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "793067814744",
+    "project_id": "chatiq-137c2",
+    "storage_bucket": "chatiq-137c2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793067814744:android:bccf17c2af0120e8052f2d",
+        "android_client_info": {
+          "package_name": "com.example.chat_iq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793067814744-183qicenlfbf62qltvirbk10jdeeulij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNvIKGKPhLXqP2Jz1B3pS_enlNU-Tm1lU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793067814744-183qicenlfbf62qltvirbk10jdeeulij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
