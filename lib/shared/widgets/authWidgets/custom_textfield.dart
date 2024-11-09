@@ -1,16 +1,15 @@
 import 'package:chat_iq/index.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    super.key,
-    required this.title,
-    required this.hintText,
-    this.validator,
-    required this.keyboardType,
-    this.obsecureText = false,
-    this.onChanged,
-    this.controller
-  });
+  const CustomTextField(
+      {super.key,
+      required this.title,
+      required this.hintText,
+      this.validator,
+      required this.keyboardType,
+      this.obsecureText = false,
+      this.onChanged,
+      this.controller});
   final String title;
   final String hintText;
   final TextEditingController? controller;
@@ -54,7 +53,7 @@ class CustomTextField extends StatelessWidget {
               obscureText: obsecureText!,
               validator: validator,
               decoration: InputDecoration(
-                // Set the error text color
+                //Set the error text color
                 errorBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.red),
                 ),

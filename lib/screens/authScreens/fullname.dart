@@ -23,91 +23,93 @@ class _FullNamePageState extends State<FullNamePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [
-        CustomSignUp(),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 51.w),
-          child: Container(
-            height: 53.h,
-            width: 297.w,
-            child: const Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                BuildTimeLinetile(
-                  isSelected: true,
-                  text: 'Email',
-                ),
-                BuildTimeLinetile(
-                  isSelected: false,
-                  text: 'Name',
-                ),
-                BuildTimeLinetile(
-                  isSelected: false,
-                  text: 'Birthday',
-                ),
-                BuildTimeLinetile(
-                  isSelected: false,
-                  text: 'Gender',
-                ),
-                BuildTimeLinetile(
-                  text: 'Pass',
-                  isSelected: false,
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Column(children: [
+          CustomSignUp(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 51.w),
+            child: Container(
+              height: 53.h,
+              width: 297.w,
+              child: const Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  BuildTimeLinetile(
+                    isSelected: true,
+                    text: 'Email',
+                  ),
+                  BuildTimeLinetile(
+                    isSelected: false,
+                    text: 'Name',
+                  ),
+                  BuildTimeLinetile(
+                    isSelected: false,
+                    text: 'Birthday',
+                  ),
+                  BuildTimeLinetile(
+                    isSelected: false,
+                    text: 'Gender',
+                  ),
+                  BuildTimeLinetile(
+                    text: 'Pass',
+                    isSelected: false,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-        SizedBox(
-          height: 45.h,
-        ),
-        Form(
-          key: _formKey,
-          child: CustomTextField(
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "User name cannot be empty";
-              } else {
-                return null;
-              }
-            },
-            title: 'Your Full Name',
-            hintText: 'John doe',
-            keyboardType: TextInputType.name,
+          SizedBox(
+            height: 45.h,
           ),
-        ),
-        SizedBox(
-          height: 31.h,
-        ),
-        CustomElevatedButton(
-            buttonName: 'Continue',
-            onTab: () {
-              if (_formKey.currentState!.validate()) {
-                AuthCubit.get(context).username = _userNameController.text;
+          Form(
+            key: _formKey,
+            child: CustomTextField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return "User name cannot be empty";
+                } else {
+                  return null;
+                }
+              },
+              title: 'Your Full Name',
+              hintText: 'John doe',
+              keyboardType: TextInputType.name,
+            ),
+          ),
+          SizedBox(
+            height: 31.h,
+          ),
+          CustomElevatedButton(
+              buttonName: 'Continue',
+              onTab: () {
+                if (_formKey.currentState!.validate()) {
+                  AuthCubit.get(context).username = _userNameController.text;
 
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DateOfBirth()));
-              }
-            }),
-        SizedBox(
-          height: 32.h,
-        ),
-        // AuthFuncs(title: 'Sign up with'),
-        // SizedBox(
-        //   height: 12.h,
-        // ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 51.w),
-          child: Divider(),
-        ),
-        Bottombar(
-          text: 'Have an account?',
-          onTab: () {},
-          auth: 'Login',
-          builder: (BuildContext context) => SignInPage(),
-        )
-      ]),
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DateOfBirth()));
+                }
+              }),
+          SizedBox(
+            height: 32.h,
+          ),
+          // AuthFuncs(title: 'Sign up with'),
+          // SizedBox(
+          //   height: 12.h,
+          // ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 51.w),
+            child: Divider(),
+          ),
+          Bottombar(
+            text: 'Have an account?',
+            onTab: () {},
+            auth: 'Login',
+            builder: (BuildContext context) => SignInPage(),
+          )
+        ]),
+      ),
     );
   }
 }
